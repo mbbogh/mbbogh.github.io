@@ -1,0 +1,18 @@
+* create or generate a favicon
+
+** basic information
+As always a good starting point is the [[https://en.wikipedia.org/wiki/Favicon][Wikipedia]] for some basic information. More depth and usage information on [[https://wiki.selfhtml.org/wiki/Grafik/Favicon][selfhtml]] and the official information on [[https://www.w3.org/2005/10/howto-favicon][w3.org]].
+
+- =ico= is a container format storing (multiple sized) PNG, GIF, JPEG or SVG image.
+- Depending on the browser a 16x16 or 32x32 pixel image is used.
+- Other sizes like 180x180 for iPad are also common.
+
+** howto
+Crop the image to the square part to be used.
+
+Use =convert= from /ImageMagick/ to generate the ico container with two most used size.
+#+begin_src sh
+  convert square_image.png -alpha off -resize 32x32 -define icon:auto-resize="32,16" favicon.ico
+#+end_src
+
+More examples are on the [[https://legacy.imagemagick.org/Usage/thumbnails/#favicon][ImageMagick webpage]].
