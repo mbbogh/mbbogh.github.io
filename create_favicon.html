@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<title>create or generate a favicon</title>
+<meta name="generator" content="Org Mode" />
+</head>
+<body>
+<h2>create or generate a favicon</h2>
+<h3>basic information</h3>
+<p>
+As always a good starting point is the <a href="https://en.wikipedia.org/wiki/Favicon">Wikipedia</a> for some basic information. More depth and usage information on <a href="https://wiki.selfhtml.org/wiki/Grafik/Favicon">selfhtml</a> and the official information on <a href="https://www.w3.org/2005/10/howto-favicon">w3.org</a>.
+</p>
+
+<ul>
+<li><code>ico</code> is a container format storing (multiple sized) PNG, GIF, JPEG or SVG image.</li>
+<li>Depending on the browser a 16x16 or 32x32 pixel image is used.</li>
+<li>Other sizes like 180x180 for iPad are also common.</li>
+</ul>
+
+<h3>howto</h3>
+<p>
+Crop the image to the square part to be used.
+</p>
+
+<p>
+Use <code>convert</code> from <i>ImageMagick</i> to generate the ico container with two most used size.
+</p>
+
+<pre>convert square_image.png -alpha off -resize 32x32 -define icon:auto-resize="32,16" favicon.ico
+</pre>
+</div>
+
+<p>
+More examples are on the <a href="https://legacy.imagemagick.org/Usage/thumbnails/#favicon">ImageMagick webpage</a>.
+</p>
+</body>
+</html>
